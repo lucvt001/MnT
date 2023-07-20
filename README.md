@@ -8,7 +8,7 @@ To get started:
     git remote add origin https://github.com/lucvt001/MnT.git
     git pull origin main
     
-It is recommended to use a virtual environment to run python:  
+It is recommended to use a virtual environment to run python (run this in main terminal, not VSC terminal):  
 
     python3 -m venv .venv
     source .venv/bin/activate

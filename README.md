@@ -2,9 +2,13 @@ Computer vision file for human detection using Ultralytics Yolov8.
 
 To get started:  
 
-    git clone https://github.com/lucvt001/MnT.git
+    mkdir MnT
+    cd MnT/
+    git init
+    git remote add origin https://github.com/lucvt001/MnT.git
+    git pull origin main
     
-Create a virtual environment using terminal:  
+It is recommended to use a virtual environment to run python:  
 
     python3 -m venv .venv
     source .venv/bin/activate

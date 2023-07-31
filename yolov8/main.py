@@ -1,9 +1,14 @@
 import cv2
 from ultralytics import YOLO
 import torch
+import os
+
+current_file_path = os.path.abspath(__file__)
+current_directory = os.path.dirname(current_file_path)
+required_path = os.path.join(current_directory, 'yolov8n-face.pt')
 
 # Load the YOLOv8 model
-model = YOLO('yolov8/yolov8n.pt')
+model = YOLO(required_path)
 
 # Load camera
 cap = cv2.VideoCapture(0)

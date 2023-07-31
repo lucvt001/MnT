@@ -1,4 +1,5 @@
 import torch
+import os
 
 def num_to_range(num, inMin, inMax, outMin, outMax):
     return outMin + (float(num - inMin) / float(inMax - inMin) * (outMax - outMin))
@@ -38,3 +39,9 @@ def cmd_out(center, box_dim, LeftRightThreshold = 0.25, min_box_sz = 0.04, max_b
         forwardBackwardPwm = num_to_range(abs(box_sz - max_box_sz), 0, 1-max_box_sz, -min_pwm, -max_pwm)
 
     return (leftRightPwm, forwardBackwardPwm)
+
+def get_dir(file_name):
+    current_file_path = os.path.abspath(__file__)
+    current_directory = os.path.dirname(current_file_path)
+    required_path = os.path.join(current_directory, file_name)
+    return required_path

@@ -1,10 +1,10 @@
 # import cv2
 from ultralytics import YOLO
 import torch
-from helper import cmd_out
+from helper import cmd_out, get_dir
 
 # Load the YOLOv8 model
-model = YOLO('yolov8/yolov8n.pt')
+model = YOLO(get_dir('yolov8n.pt'))
 
 def main():
     prev_id = 0

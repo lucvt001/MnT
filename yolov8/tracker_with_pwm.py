@@ -1,10 +1,10 @@
 import cv2
 from ultralytics import YOLO
 import torch
-from helper import cmd_out
+from helper import cmd_out, get_dir
 
 class Tracker_with_pwm():
-    def __init__(self, source = 0, weights = 'yolov8/yolov8n.pt', tracker="bytetrack.yaml", show=True, stream=True):
+    def __init__(self, source = 0, weights = get_dir('yolov8n.pt'), tracker="bytetrack.yaml", show=True, stream=True):
         self.model = YOLO(weights)
         self.prev_id = 0
         self.run(source=source, show=show, stream=stream, tracker=tracker)

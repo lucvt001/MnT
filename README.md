@@ -13,6 +13,7 @@ It is recommended to use a virtual environment to run python (run this in main t
     python3 -m venv .venv
     source .venv/bin/activate
     pip3 install ultralytics
+    pip3 install opencv-python
 
 Run "main.py" in VSC or in terminal using:  
 

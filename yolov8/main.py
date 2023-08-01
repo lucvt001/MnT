@@ -18,7 +18,7 @@ while cap.isOpened():
 
     if success:
         # Run YOLOv8 inference on the frame
-        for result in model(frame, stream=True, device=device):
+        for result in model(frame, stream=True, device=device, show=True):
             boxes = result.boxes
 
             # Detect if there is any human inside the frame
@@ -30,10 +30,10 @@ while cap.isOpened():
                 print(centers)
 
             # Visualize the results on the frame
-            annotated_frame = result.plot()
+            # annotated_frame = result.plot()
 
             # Display the annotated frame
-            cv2.imshow("YOLOv8 Inference", annotated_frame)
+            # cv2.imshow("YOLOv8 Inference", annotated_frame)
 
 # Release the video capture object and close the display window
 cap.release()

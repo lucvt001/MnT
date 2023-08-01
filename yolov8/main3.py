@@ -1,14 +1,17 @@
 # import cv2
 from ultralytics import YOLO
 import torch
-from helper import cmd_out, get_dir
+from helper import *
 
 # Load the YOLOv8 model
 model = YOLO(get_dir('yolov8n.pt'))
+device = get_dev()
+model.to(device=device)
+source=0
 
-def main():
+def main(source, device, show=True, stream=True, tracker="bytetrack.yaml"):
     prev_id = 0
-    for result in model.track(source=0, show=True, stream=True, tracker="bytetrack.yaml"):
+    for result in model.track(source=source, show=show, stream=stream, tracker=tracker, device=device):
         boxes = result.boxes
         current_id = boxes.id
         classes = boxes.cls
@@ -33,5 +36,5 @@ def main():
                 print('Forward Backward Pwm: ', forwardBackwardPwm)
         
 if __name__=='__main__':
-    main()
+    main(source=source, device=device)
 

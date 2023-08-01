@@ -45,3 +45,9 @@ def get_dir(file_name):
     current_directory = os.path.dirname(current_file_path)
     required_path = os.path.join(current_directory, file_name)
     return required_path
+
+def get_dev():
+    if torch.cuda.is_available():
+        return 'cuda'
+    else:
+        return 'cpu'

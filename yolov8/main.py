@@ -1,7 +1,6 @@
 import cv2
 from ultralytics import YOLO
 import torch
-import os
 from helper import *
 
 # Load the YOLOv8 model
